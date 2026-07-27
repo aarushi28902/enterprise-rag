@@ -1,7 +1,11 @@
 from functools import lru_cache
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
+
 
 class Settings(BaseSettings):
+    model_config = ConfigDict(env_file=".env")
+
     qdrant_url: str = "http://localhost:6333"
     qdrant_collection: str = "enterprise_rag"
     embed_model: str = "BAAI/bge-m3"
@@ -12,8 +16,6 @@ class Settings(BaseSettings):
     top_k: int = 6
     log_level: str = "INFO"
 
-    class Config:
-        env_file = ".env"
 
 @lru_cache
 def get_settings() -> Settings:
