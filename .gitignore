@@ -1,26 +1,12 @@
-# Python
+venv/
 __pycache__/
 *.pyc
-
-# Virtual environments
-venv/
-.venv/
-
-# Never commit this
 .env
-
-# Testing
-.coverage
-.pytest_cache/
-coverage.xml
-
-# Qdrant
-storage/
-qdrant.tar.gz
-
-# Eval results
-eval/results.json
-
-# Build
 *.egg-info/
 dist/
+storage/
+qdrant.tar.gz
+.coverage
+coverage.xml
+.pytest_cache/
+eval/results.json
