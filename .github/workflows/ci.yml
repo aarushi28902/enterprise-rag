@@ -24,6 +24,7 @@ jobs:
           pip install fastapi uvicorn pydantic pydantic-settings \
             qdrant-client sentence-transformers openai \
             prometheus-client structlog httpx \
+            python-multipart aiofiles \
             pytest pytest-asyncio pytest-cov anyio
 
       - name: Run tests
