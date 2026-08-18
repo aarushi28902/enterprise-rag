@@ -20,12 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install fastapi uvicorn pydantic pydantic-settings \
-            qdrant-client sentence-transformers openai \
-            prometheus-client structlog httpx \
-            python-multipart aiofiles \
-            pytest pytest-asyncio pytest-cov anyio
+            python -m pip install --upgrade pip
+            python -m pip install -r requirements.txt
+            python -m pip install pytest pytest-asyncio pytest-cov anyio
 
       - name: Run tests
         run: pytest tests/ -v --cov=src/rag --cov-report=xml
